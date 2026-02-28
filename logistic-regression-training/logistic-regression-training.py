@@ -14,7 +14,7 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
     w = np.zeros(n)
     b = 0.0
     for i in range(steps): 
-        z = w @ X.T + b
+        z = X @ w + b
         p = _sigmoid(z)
         dj_dw = (X.T @ (p - y)) / m
         w = w - lr * dj_dw
