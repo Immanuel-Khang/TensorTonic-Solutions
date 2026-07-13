@@ -1,15 +1,8 @@
 def word_count_dict(sentences):
-    """
-    Returns: dict[str, int] - global word frequency across all sentences
-    """
-    # Your code here
-    dict = {}
-    for sentence in sentences: 
-        for word in sentence: 
-            if word in dict: 
-                dict[word] = dict[word] + 1
-            else: 
-                dict[word] = 1
+    word_counts = {}
 
-    return dict
-    pass
+    for sentence in sentences:
+        for word in sentence:
+            word_counts[word] = word_counts.get(word, 0) + 1
+
+    return word_counts
